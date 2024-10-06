@@ -1,60 +1,56 @@
+/* Global Styles for Services Section */
 .services {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 80px;
-    margin: 80px 170px;
+    padding: 4rem 2rem;
+    text-align: center;
 }
 
 .services-title {
-    margin-bottom: 50px;
-    position: relative;
+    margin-bottom: 3rem;
 }
 
 .services-title h1 {
-    padding: 0px 30px;
-    font-size: 80px;
-    font-weight: 600;
-    margin-bottom: 10px;
+    font-size: 2.5rem;
+    font-weight: bold;
 }
 
 .services-title img {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: auto;
-    opacity: 0.3;
+    margin-top: 1rem;
+    width: 150px;
 }
 
-.services-format {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 20px;
-    padding: 60px;
-    border-radius: 10px;
-    border: 2px solid white;
-    transition: 0.4s;
-    cursor: pointer;
-}
-
+/* Container for services */
 .services-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    margin-bottom: 80px;
+    grid-template-columns: repeat(3, 1fr);
+    /* Three columns by default */
+    gap: 2rem;
+}
+
+/* Individual service card */
+.services-format {
+    padding: 2rem;
+    border-radius: 10px;
+    border: 2px solid white;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.services-format:hover {
+    transform: translateY(-5px);
+    /* Lift the card on hover */
 }
 
 .services-format h3 {
     font-size: 28px;
-    font-weight: 600;
+    font-weight: bold;
+    color: #007BFF;
+    margin-bottom: 0.5rem;
 }
 
 .services-format h2 {
-    font-size: 38px;
+    font-size: 30px;
+    margin-bottom: 1rem;
     font-weight: 800;
     background: linear-gradient(279deg, #DF8908 50%, #B415FF 100%);
     background-clip: text;
@@ -63,17 +59,29 @@
 }
 
 .services-format p {
-    color: #d4d4d4;
-    font-size: 24px;
+    font-size: 20px;
+    margin-bottom: 2rem;
+    color: #b7abab;
     line-height: 30px;
     max-width: 300px;
 }
 
+/* Read more section inside service cards */
 .services-readmore {
     display: flex;
-    gap: 14px;
     align-items: center;
-    margin-top: 20px;
+    gap: 0.5rem;
+    color: #007BFF;
+    cursor: pointer;
+}
+
+.services-readmore p {
+    font-size: 24px;
+    color: #d4d4d4;
+}
+
+.services-readmore img {
+    width: 16px;
 }
 
 .services-format:hover {
@@ -83,44 +91,79 @@
     transition: 0.4s;
 }
 
-@media(max-width:768px) {
-    .services {
-        align-items: start;
-        gap: 70px;
-        margin: 20px 70px;
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .services-container {
+        grid-template-columns: repeat(2, 1fr);
+        /* Two columns on tablets */
     }
 
     .services-title h1 {
-        font-size: 50px;
-        padding: 0;
+        font-size: 2.2rem;
     }
 
-    .services-title img {
-        width: 130px;
-        margin-right: -20px;
-    }
-
-    .services-format {
-        gap: 20px;
-        padding: 32px;
+    .services-format h3 {
+        font-size: 1.6rem;
     }
 
     .services-format h2 {
-        font-size: 28px;
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-container {
+        grid-template-columns: 1fr;
+        /* Single column on mobile */
+    }
+
+    .services-title h1 {
+        font-size: 2rem;
+    }
+
+    .services-format h3 {
+        font-size: 1.4rem;
+    }
+
+    .services-format h2 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .services {
+        padding: 3rem 1rem;
+    }
+
+    .services-title h1 {
+        font-size: 1.8rem;
+    }
+
+    .services-title img {
+        width: 120px;
+    }
+
+    .services-format {
+        padding: 1.5rem;
+    }
+
+    .services-format h3 {
+        font-size: 1.3rem;
+    }
+
+    .services-format h2 {
+        font-size: 1.1rem;
     }
 
     .services-format p {
-        font-size: 18px;
-        line-height: 32px;
-        max-width: 300px;
+        font-size: 0.95rem;
+    }
+
+    .services-readmore p {
+        font-size: 0.9rem;
     }
 
     .services-readmore img {
-        width: 20px;
-    }
-
-    .services-container {
-        grid-template-columns: 1fr 1fr;
-        gap: 30px;
+        width: 14px;
     }
 }
